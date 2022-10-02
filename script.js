@@ -1,10 +1,14 @@
 /*console.log("Hello World")*/
-const button = document.getElementById("add");
-button.addEventListener("click", handleClick);
 
-const input = document.getElementById("text");
-input.addEventListener("keydown", handleKeyDown);
+/*Es gibt für DOMContentLoaded keine entsprechende Objekteigenschaft, dass heißt, eine Überwachung dieses Ereignisses muss immer mit addEventListener erfolgen.
+Verwenden Sie DOMContentLoaded anstelle von load, damit Skripte schon geladen werden, bevor alle Bilder und anderen Mediendateien fertig geladen sind. */
+document.addEventListener("DOMContentLoaded", function () {
+    const button = document.getElementById("add");
+    button.addEventListener("click", handleClick);
 
+    const input = document.getElementById("text");
+    input.addEventListener("keydown", handleKeyDown);
+});
 
 function handleClick(/* event */) {
     add();
